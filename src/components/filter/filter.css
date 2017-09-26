@@ -1,0 +1,51 @@
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 10px;
+}
+
+.filter:last-child {
+    margin-bottom: 0;
+}
+
+.filter__item {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    margin: 0 3px;
+    height: 15px;
+    width: 15px;
+    background: no-repeat center/contain;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+.filter__item.active {
+    filter: grayscale(0);
+}
+
+.filter__item._sun {
+    background-image: url(pics/sun.svg);
+}
+
+.filter__item._flash {
+    background-image: url(pics/flash.svg);
+}
+
+.filter__item._heart {
+    background-image: url(pics/heart.svg);
+}
+
+.filter__item._flower {
+    background-image: url(pics/flower.svg);
+}
+
+.filter__item:last-child {
+    margin-right: 0;
+}
+
+.filter__label {
+    margin: 0 10px;
+}

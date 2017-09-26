@@ -13,6 +13,8 @@ import LeftSide from './leftSide'
 import RightSide from './rightSide'
 import PreviewItem from './previewItem'
 
+import contains from '../selectors/contains'
+
 const App = (props) => {
     if (props.uploadedLeftItems.length === 0) {
         props.onGetLeftList();
@@ -65,19 +67,13 @@ function mapStateToProps(state) {
             return arr;
         })(),
         rightList: (function() {
-            var arr = state.getRightList.filter(function(item) {
-                var status;
-
-                state.filterButtons.forEach(function(button) {
-                    if (button.status) {
-                        status = item.flags.some((type) => type === button.type);
-                    }
-                });
-
-                return status;
+            var buttons = [];
+            
+            state.filterButtons.forEach(function(item) {
+                if (item.status) buttons.push(item.type);
             });
 
-            return arr;
+            return state.getRightList.filter((item) => contains(item.flags, buttons));
         })(),
 	}
 }

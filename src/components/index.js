@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { getList } from '../actions/getList';
-import { findItems } from '../actions/findItems';
+import { getLeftList } from '../actions/getLeftList';
+import { getRightList } from '../actions/getRightList';
+import { findLeftItems } from '../actions/findLeftItems';
 import { changeCheckbox } from '../actions/changeCheckbox';
 import { selectItem } from '../actions/selectItem';
 
@@ -12,19 +13,25 @@ import RightSide from './rightSide'
 import PreviewItem from './previewItem'
 
 const App = (props) => {
-    if (props.uploadedItems.length === 0) {
-        props.onGetList();
+
+    if (props.uploadedLeftItems.length === 0) {
+        props.onGetLeftList();
     }
 
+    if (props.rightList.length === 0) {
+        props.onGetRightList();
+    }
+    
     return (
         <div className='app'>
             <LeftSide 
-                list={props.list}
-                uploadedItems={props.uploadedItems}
+                list={props.leftList}
+                uploadedItems={props.uploadedLeftItems}
                 onFindItems={props.onFindItems} 
                 checkboxStatus={props.checkboxStatus}
                 changeCheckbox={props.changeCheckbox}
                 selectItem={props.selectItem}
+                selectedItem={props.selectedItem}
             />
             
             {(props.selectedItem === null) ? '' : 
@@ -34,8 +41,9 @@ const App = (props) => {
             }
 
             <RightSide 
-                list={props.list}
+                list={props.rightList}
                 selectItem={props.selectItem}
+                selectedItem={props.selectedItem}
             />
         </div>
     )
@@ -44,22 +52,23 @@ const App = (props) => {
 //
 function mapStateToProps(state) {
 	return {
-        uploadedItems: state.getList,
+        uploadedLeftItems: state.getLeftList,
         checkboxStatus: state.changeCheckbox,
         selectedItem: state.selectItem,
-        list: (function() {
-            var arr = state.findItems.slice();
+        leftList: (function() {
+            var arr = state.findLeftItems.slice();
             if (!state.changeCheckbox) arr.reverse();
-
             return arr;
-        })()
+        })(),
+        rightList: state.getRightList
 	}
 }
 
 function matchDispatchtoProps(dispatch) {
 	return bindActionCreators({
-        onGetList: getList,
-        onFindItems: findItems,
+        onGetLeftList: getLeftList,
+        onGetRightList: getRightList,
+        onFindItems: findLeftItems,
         changeCheckbox: changeCheckbox,
         selectItem: selectItem,
 	}, dispatch)

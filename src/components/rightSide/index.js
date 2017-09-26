@@ -5,7 +5,8 @@ import './list.css';
 
 const RightSide = ({
         list, 
-        selectItem
+        selectItem,
+        selectedItem
     }) => {
         return (
             <div className="list">
@@ -15,6 +16,7 @@ const RightSide = ({
                     <Items 
                         list={list} 
                         selectItem={selectItem}
+                        selectedItem={selectedItem}
                     />
                 ) : ''}
             </div>

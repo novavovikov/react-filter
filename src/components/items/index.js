@@ -3,15 +3,22 @@ import './items.css';
 
 const Items = ({
         list, 
-        selectItem
+        selectItem,
+        selectedItem
     }) => {
         return (
             <div className="list-items">
-                {list.map((item, ndx) => (
+                {list.map((item) => (
                     <div 
-                        key={ndx} 
-                        className='list-item'
-                        onClick={() => selectItem(item)}
+                        key={item.id} 
+                        className={
+                            (selectedItem !== null && selectedItem.id === item.id) ? (
+                                'list-item _active'
+                            ) : 'list-item'
+                        }
+                        onClick={() => {
+                            selectItem(item);
+                        }}
                     >
                         <div className="list-item__name">{item.name}</div>
                         <div className="list-item__flags">
@@ -19,8 +26,7 @@ const Items = ({
                                 <span 
                                     key={index} 
                                     className={"list-item__flag _" + flag}
-                                >
-                                </span>
+                                ></span>
                             ))}
                         </div>
                     </div>

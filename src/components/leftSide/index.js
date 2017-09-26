@@ -9,7 +9,8 @@ const LeftSide = ({
         onFindItems, 
         checkboxStatus, 
         changeCheckbox, 
-        selectItem
+        selectItem,
+        selectedItem
     }) => {
         return (
             <div className="list">
@@ -25,6 +26,7 @@ const LeftSide = ({
                     <Items 
                         list={list} 
                         selectItem={selectItem} 
+                        selectedItem={selectedItem}
                     />
                 ) : ''}
             </div>

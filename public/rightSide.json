@@ -1,442 +1,157 @@
 [
     {
         "name": "Tresom",
-        "flags": ["flower"]
+        "flags": ["flower"],
+        "id": 101
     },
     {
         "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
+        "flags": ["flower", "heart", "sun"],
+        "id": 102
     },
     {
         "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
+        "flags": ["flash", "sun", "flower"],
+        "id": 103
     },
     {
         "name": "Job",
-        "flags": ["flower"]
+        "flags": ["flower"],
+        "id": 104
     },
     {
         "name": "Zoolab",
-        "flags": ["heart"]
+        "flags": ["heart"],
+        "id": 105
     },
     {
         "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
+        "flags": ["heart", "flash", "sun"],
+        "id": 106
     },
     {
         "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
+        "flags": ["flower", "heart", "sun", "flash"],
+        "id": 107
     },
     {
         "name": "Zaam-Dox",
-        "flags": ["heart"]
+        "flags": ["heart"],
+        "id": 108
     },
     {
         "name": "Tampflex",
-        "flags": ["flower", "sun"]
+        "flags": ["flower", "sun"],
+        "id": 109
     },
     {
         "name": "Veribet",
-        "flags": ["flower", "flash"]
+        "flags": ["flower", "flash"],
+        "id": 110
     },
     {
         "name": "Tresom",
-        "flags": ["flower"]
+        "flags": ["flower"],
+        "id": 111
     },
     {
         "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
+        "flags": ["flower", "heart", "sun"],
+        "id": 112
     },
     {
         "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
+        "flags": ["flash", "sun", "flower"],
+        "id": 113
     },
     {
         "name": "Job",
-        "flags": ["flower"]
+        "flags": ["flower"],
+        "id": 114
     },
     {
         "name": "Zoolab",
-        "flags": ["heart"]
+        "flags": ["heart"],
+        "id": 115
     },
     {
         "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
+        "flags": ["heart", "flash", "sun"],
+        "id": 116
     },
     {
         "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
+        "flags": ["flower", "heart", "sun", "flash"],
+        "id": 117
     },
     {
         "name": "Zaam-Dox",
-        "flags": ["heart"]
+        "flags": ["heart"],
+        "id": 118
     },
     {
         "name": "Tampflex",
-        "flags": ["flower", "sun"]
+        "flags": ["flower", "sun"],
+        "id": 119
     },
     {
         "name": "Veribet",
-        "flags": ["flower", "flash"]
+        "flags": ["flower", "flash"],
+        "id": 120
     },
     {
         "name": "Tresom",
-        "flags": ["flower"]
+        "flags": ["flower"],
+        "id": 121
     },
     {
         "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
+        "flags": ["flower", "heart", "sun"],
+        "id": 122
     },
     {
         "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
+        "flags": ["flash", "sun", "flower"],
+        "id": 123
     },
     {
         "name": "Job",
-        "flags": ["flower"]
+        "flags": ["flower"],
+        "id": 124
     },
     {
         "name": "Zoolab",
-        "flags": ["heart"]
+        "flags": ["heart"],
+        "id": 125
     },
     {
         "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
+        "flags": ["heart", "flash", "sun"],
+        "id": 126
     },
     {
         "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
+        "flags": ["flower", "heart", "sun", "flash"],
+        "id": 127
     },
     {
         "name": "Zaam-Dox",
-        "flags": ["heart"]
+        "flags": ["heart"],
+        "id": 128
     },
     {
         "name": "Tampflex",
-        "flags": ["flower", "sun"]
+        "flags": ["flower", "sun"],
+        "id": 129
     },
     {
         "name": "Veribet",
-        "flags": ["flower", "flash"]
+        "flags": ["flower", "flash"],
+        "id": 130
     },
     {
         "name": "Tresom",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
-    },
-    {
-        "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
-    },
-    {
-        "name": "Job",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Zoolab",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
-    },
-    {
-        "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
-    },
-    {
-        "name": "Zaam-Dox",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Tampflex",
-        "flags": ["flower", "sun"]
-    },
-    {
-        "name": "Veribet",
-        "flags": ["flower", "flash"]
-    },
-    {
-        "name": "Tresom",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
-    },
-    {
-        "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
-    },
-    {
-        "name": "Job",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Zoolab",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
-    },
-    {
-        "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
-    },
-    {
-        "name": "Zaam-Dox",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Tampflex",
-        "flags": ["flower", "sun"]
-    },
-    {
-        "name": "Veribet",
-        "flags": ["flower", "flash"]
-    },
-    {
-        "name": "Tresom",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
-    },
-    {
-        "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
-    },
-    {
-        "name": "Job",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Zoolab",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
-    },
-    {
-        "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
-    },
-    {
-        "name": "Zaam-Dox",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Tampflex",
-        "flags": ["flower", "sun"]
-    },
-    {
-        "name": "Veribet",
-        "flags": ["flower", "flash"]
-    },
-    {
-        "name": "Tresom",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
-    },
-    {
-        "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
-    },
-    {
-        "name": "Job",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Zoolab",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
-    },
-    {
-        "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
-    },
-    {
-        "name": "Zaam-Dox",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Tampflex",
-        "flags": ["flower", "sun"]
-    },
-    {
-        "name": "Veribet",
-        "flags": ["flower", "flash"]
-    },
-    {
-        "name": "Tresom",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
-    },
-    {
-        "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
-    },
-    {
-        "name": "Job",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Zoolab",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
-    },
-    {
-        "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
-    },
-    {
-        "name": "Zaam-Dox",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Tampflex",
-        "flags": ["flower", "sun"]
-    },
-    {
-        "name": "Veribet",
-        "flags": ["flower", "flash"]
-    },
-    {
-        "name": "Tresom",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
-    },
-    {
-        "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
-    },
-    {
-        "name": "Job",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Zoolab",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
-    },
-    {
-        "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
-    },
-    {
-        "name": "Zaam-Dox",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Tampflex",
-        "flags": ["flower", "sun"]
-    },
-    {
-        "name": "Veribet",
-        "flags": ["flower", "flash"]
-    },
-    {
-        "name": "Tresom",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
-    },
-    {
-        "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
-    },
-    {
-        "name": "Job",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Zoolab",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
-    },
-    {
-        "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
-    },
-    {
-        "name": "Zaam-Dox",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Tampflex",
-        "flags": ["flower", "sun"]
-    },
-    {
-        "name": "Veribet",
-        "flags": ["flower", "flash"]
-    },
-    {
-        "name": "Tresom",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Otcom",
-        "flags": ["flower", "heart", "sun"]
-    },
-    {
-        "name": "Kanlam",
-        "flags": ["flash", "sun", "flower"]
-    },
-    {
-        "name": "Job",
-        "flags": ["flower"]
-    },
-    {
-        "name": "Zoolab",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Hatity",
-        "flags": ["heart", "flash", "sun"]
-    },
-    {
-        "name": "Stringtough",
-        "flags": ["flower", "heart", "sun", "flash"]
-    },
-    {
-        "name": "Zaam-Dox",
-        "flags": ["heart"]
-    },
-    {
-        "name": "Tampflex",
-        "flags": ["flower", "sun"]
-    },
-    {
-        "name": "Veribet",
-        "flags": ["flower", "flash"]
+        "flags": ["flower"],
+        "id": 131
     }
 ]

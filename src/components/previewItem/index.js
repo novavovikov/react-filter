@@ -4,8 +4,6 @@ import './preview.css'
 const PreviewItem = ({
     selectedItem
 }) => {
-    console.log(selectedItem);
-
     return (
         <div className="preview">
             <div className="preview__title">Info</div>

@@ -14,16 +14,20 @@
     display: inline-block;
     vertical-align: middle;
     border: none;
+    outline: none;
     margin: 0 3px;
-    height: 15px;
-    width: 15px;
+    height: 17px;
+    width: 17px;
     background: no-repeat center/contain;
     cursor: pointer;
     filter: grayscale(100%);
+    transform: scale(.75);
+    transition: .3s;
 }
 
-.filter__item.active {
+.filter__item._active {
     filter: grayscale(0);
+    transform: scale(1);
 }
 
 .filter__item._sun {

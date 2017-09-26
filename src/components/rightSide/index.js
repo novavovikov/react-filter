@@ -6,11 +6,16 @@ import './list.css';
 const RightSide = ({
         list, 
         selectItem,
-        selectedItem
+        selectedItem,
+        buttons,
+        updateButton
     }) => {
         return (
             <div className="list">
-                <Filter />
+                <Filter 
+                    buttons={buttons}
+                    updateButton={updateButton}
+                />
 
                 {(list.length > 0) ? (
                     <Items 

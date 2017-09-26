@@ -7,18 +7,18 @@ import { getRightList } from '../actions/getRightList';
 import { findLeftItems } from '../actions/findLeftItems';
 import { changeCheckbox } from '../actions/changeCheckbox';
 import { selectItem } from '../actions/selectItem';
+import { updateFilterButton } from '../actions/updateFilterButton';
 
 import LeftSide from './leftSide'
 import RightSide from './rightSide'
 import PreviewItem from './previewItem'
 
 const App = (props) => {
-
     if (props.uploadedLeftItems.length === 0) {
         props.onGetLeftList();
     }
 
-    if (props.rightList.length === 0) {
+    if (props.uploadedRightItems.length === 0) {
         props.onGetRightList();
     }
     
@@ -44,6 +44,8 @@ const App = (props) => {
                 list={props.rightList}
                 selectItem={props.selectItem}
                 selectedItem={props.selectedItem}
+                buttons={props.filterButtons}
+                updateButton={props.updateFilterButton}
             />
         </div>
     )
@@ -53,14 +55,30 @@ const App = (props) => {
 function mapStateToProps(state) {
 	return {
         uploadedLeftItems: state.getLeftList,
+        uploadedRightItems: state.getRightList,
         checkboxStatus: state.changeCheckbox,
         selectedItem: state.selectItem,
+        filterButtons: state.filterButtons,
         leftList: (function() {
-            var arr = state.findLeftItems.slice();
+            var arr = [...state.findLeftItems];
             if (!state.changeCheckbox) arr.reverse();
             return arr;
         })(),
-        rightList: state.getRightList
+        rightList: (function() {
+            var arr = state.getRightList.filter(function(item) {
+                var status;
+
+                state.filterButtons.forEach(function(button) {
+                    if (button.status) {
+                        status = item.flags.some((type) => type === button.type);
+                    }
+                });
+
+                return status;
+            });
+
+            return arr;
+        })(),
 	}
 }
 
@@ -71,6 +89,7 @@ function matchDispatchtoProps(dispatch) {
         onFindItems: findLeftItems,
         changeCheckbox: changeCheckbox,
         selectItem: selectItem,
+        updateFilterButton: updateFilterButton
 	}, dispatch)
 }
 

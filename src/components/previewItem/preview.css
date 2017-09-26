@@ -1,7 +1,7 @@
 .preview {
     display: inline-block;
     vertical-align: middle;
-    width: 160px;
+    width: 180px;
     margin: 0 30px;
     background: #e6e6fe;
     color: #272532;
@@ -36,6 +36,8 @@
     vertical-align: middle;
     text-align: center;
     width: calc(100% - 60px);
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .preview-info__flag {

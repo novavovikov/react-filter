@@ -12,6 +12,7 @@ import { updateFilterButton } from '../actions/updateFilterButton';
 import LeftSide from './leftSide'
 import RightSide from './rightSide'
 import PreviewItem from './previewItem'
+import Example from './example'
 
 import contains from '../selectors/contains'
 
@@ -26,6 +27,8 @@ const App = (props) => {
 
     return ( 
         <div className = 'app'>
+            <Example />
+            
             <LeftSide   
                 list = { props.leftList }
                 uploadedItems = { props.uploadedLeftItems }

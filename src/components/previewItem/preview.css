@@ -6,6 +6,7 @@
     background: #e6e6fe;
     color: #272532;
     padding: 10px 15px 15px;
+    align-self: flex-start;
 }
 
 .preview__title {

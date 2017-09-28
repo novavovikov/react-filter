@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
 import flow from 'lodash/flow';
  
@@ -27,7 +26,7 @@ class Card extends Component {
 
 const cardSource = {
     
-       beginDrag(props) {		
+       beginDrag(props) {
            return {			
                index: props.index,
                listId: props.listId,
@@ -96,7 +95,7 @@ const cardSource = {
        }
    };
 
-   export default flow(
+export default flow(
 	DropTarget("CARD", cardTarget, connect => ({
 		connectDropTarget: connect.dropTarget()
 	})),

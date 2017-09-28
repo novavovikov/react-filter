@@ -1,38 +1,63 @@
 import React from 'react';
+import { DropTarget } from 'react-dnd';
+import Item from '../item';
 import './items.css';
 
 const Items = ({
-        list, 
-        selectItem,
-        selectedItem
-    }) => {
-        return (
-            <div className="list-items">
-                {list.map((item) => (
-                    <div 
-                        key={item.id} 
-                        className={
-                            (selectedItem !== null && selectedItem.id === item.id) ? (
-                                'list-item _active'
-                            ) : 'list-item'
-                        }
-                        onClick={() => {
-                            selectItem(item);
-                        }}
-                    >
-                        <div className="list-item__name">{item.name}</div>
-                        <div className="list-item__flags">
-                            {item.flags.map((flag, index) => (
-                                <span 
-                                    key={index} 
-                                    className={"list-item__flag _" + flag}
-                                ></span>
-                            ))}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        )
-    }
+		id,
+		list, 
+		selectItem,
+		selectedItem,
+		connectDropTarget
+	}) => {
+		const pushCard = function(card) { 
+			console.log(card);
+			// this.setState(update(this.state, {
+			// 	cards: {
+			// 		$push: [ card ]
+			// 	}
+			// }));
+		}
 
-export default Items;
+		const moveCard = function(dragIndex, hoverIndex) {
+			// console.log(dragIndex, hoverIndex);
+		}
+		
+		const removeCard = function(index) {
+			console.log(index);
+		}
+
+		return connectDropTarget(
+			<div className="list-items">
+				{list.map((item, i) => (
+					<Item 
+						id={id}
+						indexItem={i}
+						key={item.id} 
+						item={item} 
+						selectItem={selectItem}
+						selectedItem={selectedItem}
+						removeCard={removeCard}
+						moveCard={moveCard}
+					/>
+				))}
+			</div>
+		)
+	}
+
+const cardTarget = {
+	drop(props, monitor) {
+		const { id } = props;
+		const sourceObj = monitor.getItem();
+		// if ( id !== sourceObj.listId ) component.pushCard(sourceObj.card);
+		return {
+			listId: id
+		};
+	}
+}
+	
+export default DropTarget("CARD", cardTarget, (connect, monitor) => ({
+	connectDropTarget: connect.dropTarget(),
+	isOver: monitor.isOver(),
+	canDrop: monitor.canDrop()
+}))(Items);

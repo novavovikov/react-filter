@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import update from 'react/lib/update';
 import Card from './Card';
 import { DropTarget } from 'react-dnd';
+import update from 'react/lib/update';
  
 class Container extends Component {
 	constructor(props) {

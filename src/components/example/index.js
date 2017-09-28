@@ -5,12 +5,6 @@ import Container from './Container';
  
 class Example extends Component {
 	render() {
-		const style = {
-			display: "flex",
-			justifyContent: "space-around",
-			paddingTop: "20px"
-		}
- 
 		const listOne = [
 			{ id: 1, text: "Item 1" },
 			{ id: 2, text: "Item 2" },
@@ -24,7 +18,7 @@ class Example extends Component {
 		];
  
 		return (
-			<div style={{...style}}>
+			<div>
 				<Container id={1} list={listOne} />
 				<Container id={2} list={listTwo} />
 			</div>

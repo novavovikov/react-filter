@@ -4,6 +4,7 @@ import Items from '../items'
 import './list.css';
 
 const LeftSide = ({
+        id,
         list, 
         uploadedItems, 
         onFindItems, 
@@ -24,6 +25,7 @@ const LeftSide = ({
 
                 {(list.length > 0) ? (
                     <Items 
+                        id={id}
                         list={list} 
                         selectItem={selectItem} 
                         selectedItem={selectedItem}

@@ -4,6 +4,7 @@ import Items from '../items'
 import './list.css';
 
 const RightSide = ({
+        id,
         list, 
         selectItem,
         selectedItem,
@@ -19,6 +20,7 @@ const RightSide = ({
 
                 {(list.length > 0) ? (
                     <Items 
+                        id={id}
                         list={list} 
                         selectItem={selectItem}
                         selectedItem={selectedItem}

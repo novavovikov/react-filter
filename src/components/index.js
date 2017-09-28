@@ -23,70 +23,70 @@ const App = (props) => {
     if (props.uploadedRightItems.length === 0) {
         props.onGetRightList();
     }
-    
-    return (
-        <div className='app'>
-            <LeftSide 
-                list={props.leftList}
-                uploadedItems={props.uploadedLeftItems}
-                onFindItems={props.onFindItems} 
-                checkboxStatus={props.checkboxStatus}
-                changeCheckbox={props.changeCheckbox}
-                selectItem={props.selectItem}
-                selectedItem={props.selectedItem}
+
+    return ( 
+        <div className = 'app'>
+            <LeftSide   
+                list = { props.leftList }
+                uploadedItems = { props.uploadedLeftItems }
+                onFindItems = { props.onFindItems }
+                checkboxStatus = { props.checkboxStatus }
+                changeCheckbox = { props.changeCheckbox }
+                selectItem = { props.selectItem }
+                selectedItem = { props.selectedItem }
             />
-            
-            {(props.selectedItem === null) ? '' : 
-                <PreviewItem 
-                    selectedItem={props.selectedItem}
+
+            {(props.selectedItem === null) ? '' :
+                <PreviewItem
+                    selectedItem = { props.selectedItem }
                 />
             }
 
             <RightSide 
-                list={props.rightList}
-                selectItem={props.selectItem}
-                selectedItem={props.selectedItem}
-                buttons={props.filterButtons}
-                updateButton={props.updateFilterButton}
-            />
+                list = { props.rightList }
+                selectItem = { props.selectItem }
+                selectedItem = { props.selectedItem }
+                buttons = { props.filterButtons }
+                updateButton = { props.updateFilterButton }
+            /> 
         </div>
     )
 }
 
 //
 function mapStateToProps(state) {
-	return {
+    return {
         uploadedLeftItems: state.getLeftList,
         uploadedRightItems: state.getRightList,
         checkboxStatus: state.changeCheckbox,
         selectedItem: state.selectItem,
         filterButtons: state.filterButtons,
         leftList: (function() {
-            var arr = [...state.findLeftItems];
+            let arr = [...state.findLeftItems];
             if (!state.changeCheckbox) arr.reverse();
             return arr;
         })(),
         rightList: (function() {
-            var buttons = [];
-            
+            let buttons = [];
+
             state.filterButtons.forEach(function(item) {
                 if (item.status) buttons.push(item.type);
             });
 
             return state.getRightList.filter((item) => contains(item.flags, buttons));
         })(),
-	}
+    }
 }
 
 function matchDispatchtoProps(dispatch) {
-	return bindActionCreators({
+    return bindActionCreators({
         onGetLeftList: getLeftList,
         onGetRightList: getRightList,
         onFindItems: findLeftItems,
         changeCheckbox: changeCheckbox,
         selectItem: selectItem,
         updateFilterButton: updateFilterButton
-	}, dispatch)
+    }, dispatch)
 }
 
 export default connect(mapStateToProps, matchDispatchtoProps)(App);

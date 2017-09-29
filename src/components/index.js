@@ -2,13 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { getLeftList } from '../actions/getLeftList';
-import { getRightList } from '../actions/getRightList';
-import { findLeftItems } from '../actions/findLeftItems';
+import { getLeftList, getRightList } from '../actions/getList';
+import {    removeItemFromLeftSide,  
+            removeItemFromRightSide, 
+            addItemInLeftSide, 
+            addItemInRightSide 
+        } from '../actions/updateList';
 import { changeCheckbox } from '../actions/changeCheckbox';
 import { selectItem } from '../actions/selectItem';
 import { updateFilterButton } from '../actions/updateFilterButton';
-import { removeItem } from '../actions/removeItem';
+import { changeSearchInput } from '../actions/changeSearchInput';
 
 import ListsContainer from './lists-container'
 
@@ -23,14 +26,19 @@ const App = (props) => {
             leftList={props.leftList}
             rightList={props.rightList}
             uploadedLeftItems={props.uploadedLeftItems}
-            onFindItems={props.onFindItems}
+            uploadedRightItems={props.uploadedRightItems}
+            searchInput={props.searchInput}
+            onChangeSearchInput={props.onChangeSearchInput}
             checkboxStatus={props.checkboxStatus}
             changeCheckbox={props.changeCheckbox}
             selectItem={props.selectItem}
             selectedItem={props.selectedItem}
             filterButtons={props.filterButtons}
             updateFilterButton={props.updateFilterButton}
-            onRemoveItem={props.onRemoveItem}
+            removeLeftItem={props.removeItemFromLeftSide}
+            removeRightItem={props.removeItemFromRightSide}
+            addItemInLeftSide={props.addItemInLeftSide}
+            addItemInRightSide={props.addItemInRightSide}
         />
     )
 }
@@ -43,10 +51,11 @@ function mapStateToProps(state) {
         checkboxStatus: state.changeCheckbox,
         selectedItem: state.selectItem,
         filterButtons: state.filterButtons,
+        searchInput: state.searchInput,
         leftList: (function() {
-            let arr = [...state.findLeftItems];
+            let arr = [...state.getLeftList];
             if (!state.changeCheckbox) arr.reverse();
-            return arr;
+            return arr.filter((item) => item.name.toLowerCase().includes(state.searchInput.toLowerCase()));
         })(),
         rightList: (function() {
             let buttons = [];
@@ -56,7 +65,7 @@ function mapStateToProps(state) {
             });
 
             return state.getRightList.filter((item) => contains(item.flags, buttons));
-        })(),
+        })()
     }
 }
 
@@ -64,11 +73,14 @@ function matchDispatchtoProps(dispatch) {
     return bindActionCreators({
         onGetLeftList: getLeftList,
         onGetRightList: getRightList,
-        onFindItems: findLeftItems,
+        removeItemFromLeftSide: removeItemFromLeftSide,
+        removeItemFromRightSide: removeItemFromRightSide,
+        addItemInRightSide: addItemInRightSide,
+        addItemInLeftSide: addItemInLeftSide,
         changeCheckbox: changeCheckbox,
+        onChangeSearchInput: changeSearchInput,
         selectItem: selectItem,
-        updateFilterButton: updateFilterButton,
-        onRemoveItem: removeItem
+        updateFilterButton: updateFilterButton
     }, dispatch)
 }
 

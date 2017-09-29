@@ -13,37 +13,34 @@ const ListsContainer = ({
     leftList,
     rightList,
     uploadedLeftItems,
-    onFindItems,
+    uploadedRightItems,
+    searchInput,
+    onChangeSearchInput,
     checkboxStatus,
     changeCheckbox,
     selectItem,
     selectedItem,
     filterButtons,
-    onRemoveItem,
-    updateFilterButton
+    updateFilterButton,
+    removeLeftItem,
+    removeRightItem,
+    addItemInRightSide,
+    addItemInLeftSide,
 }) => {
-    const handleButton = function() {
-        onRemoveItem(123)
-    }
-
     return (
         <div className="lists">
-            <button
-                onClick={handleButton}
-            >
-                Удалить!
-            </button>
-
-
             <LeftSide   
                 id={1}
                 list = { leftList }
                 uploadedItems = { uploadedLeftItems }
-                onFindItems = { onFindItems }
+                searchInput = { searchInput }
+                onChangeSearchInput = {onChangeSearchInput}
                 checkboxStatus = { checkboxStatus }
                 changeCheckbox = { changeCheckbox }
                 selectItem = { selectItem }
                 selectedItem = { selectedItem }
+                removeItem = {removeLeftItem}
+                addItem = {addItemInLeftSide}
             />
             
             {(selectedItem === null) ? '' :
@@ -55,10 +52,13 @@ const ListsContainer = ({
             <RightSide 
                 id={2}
                 list = { rightList }
+                uploadedItems = { uploadedRightItems }
                 selectItem = { selectItem }
                 selectedItem = { selectedItem }
                 buttons = { filterButtons }
                 updateButton = { updateFilterButton }
+                removeItem = {removeRightItem}
+                addItem = {addItemInRightSide}
             /> 
         </div>
     )

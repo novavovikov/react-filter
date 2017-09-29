@@ -2,9 +2,10 @@ import React from 'react';
 import './sorting.css';
 
 const Sorting = ({
-        uploadedItems, 
         list, 
-        onFindItems, 
+        uploadedItems, 
+        searchInput,
+        onChangeSearchInput,
         checkboxStatus, 
         changeCheckbox
     }) => {
@@ -13,12 +14,7 @@ const Sorting = ({
         }
         
         const changeInput = function(e) {
-            var inputValue = e.target.value.toLowerCase(),
-                newList = uploadedItems.filter(function(item) {
-                    return item.name.toLowerCase().includes(inputValue);
-                });
-
-            onFindItems(newList);
+            onChangeSearchInput(e.target.value)
         };
 
         return(
@@ -37,6 +33,7 @@ const Sorting = ({
                         type="text" 
                         placeholder="Text filter..." 
                         onChange={changeInput}
+                        value={searchInput}
                     />
                 </div>
             </div>

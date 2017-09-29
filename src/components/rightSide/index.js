@@ -6,10 +6,13 @@ import './list.css';
 const RightSide = ({
         id,
         list, 
+        addItem,
         selectItem,
         selectedItem,
         buttons,
-        updateButton
+        updateButton,
+        uploadedItems,
+        removeItem,
     }) => {
         return (
             <div className="list">
@@ -22,8 +25,11 @@ const RightSide = ({
                     <Items 
                         id={id}
                         list={list} 
+                        uploadedItems={uploadedItems} 
                         selectItem={selectItem}
                         selectedItem={selectedItem}
+                        removeItem={removeItem}
+                        addItem={addItem}
                     />
                 ) : ''}
             </div>

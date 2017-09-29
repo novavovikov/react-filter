@@ -6,25 +6,27 @@ import './items.css';
 const Items = ({
 		id,
 		list, 
+		uploadedItems, 
 		selectItem,
 		selectedItem,
-		connectDropTarget
+		connectDropTarget,
+		removeItem,
+		addItem
 	}) => {
-		const pushCard = function(card) { 
-			console.log(card);
-			// this.setState(update(this.state, {
-			// 	cards: {
-			// 		$push: [ card ]
-			// 	}
-			// }));
+		const onRemoveItem = function(item) {
+			var arr = [...uploadedItems];
+			arr.splice(arr.indexOf(item), 1);
+            removeItem(arr)
 		}
 
 		const moveCard = function(dragIndex, hoverIndex) {
 			// console.log(dragIndex, hoverIndex);
 		}
-		
-		const removeCard = function(index) {
-			console.log(index);
+
+		const pushItem = function(item) { 
+			var arr = [...uploadedItems];
+			arr.push(item)
+			addItem(arr)
 		}
 
 		return connectDropTarget(
@@ -37,24 +39,16 @@ const Items = ({
 						item={item} 
 						selectItem={selectItem}
 						selectedItem={selectedItem}
-						removeCard={removeCard}
+						removeItem={onRemoveItem}
 						moveCard={moveCard}
+						pushItem={pushItem}
 					/>
 				))}
 			</div>
 		)
 	}
 
-const cardTarget = {
-	drop(props, monitor) {
-		const { id } = props;
-		const sourceObj = monitor.getItem();
-		// if ( id !== sourceObj.listId ) component.pushCard(sourceObj.card);
-		return {
-			listId: id
-		};
-	}
-}
+const cardTarget = {}
 	
 export default DropTarget("CARD", cardTarget, (connect, monitor) => ({
 	connectDropTarget: connect.dropTarget(),

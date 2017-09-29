@@ -7,18 +7,23 @@ const LeftSide = ({
         id,
         list, 
         uploadedItems, 
-        onFindItems, 
+        searchInput,
+        onChangeSearchInput,
         checkboxStatus, 
         changeCheckbox, 
         selectItem,
-        selectedItem
+        selectedItem,
+        removeItem,
+        addItem
     }) => {
+
         return (
             <div className="list">
                 <Sorting 
-                    onFindItems={onFindItems} 
-                    uploadedItems={uploadedItems} 
                     list={list} 
+                    uploadedItems={uploadedItems} 
+                    searchInput={searchInput} 
+                    onChangeSearchInput = {onChangeSearchInput}
                     checkboxStatus={checkboxStatus}
                     changeCheckbox={changeCheckbox}
                 />
@@ -27,8 +32,11 @@ const LeftSide = ({
                     <Items 
                         id={id}
                         list={list} 
+                        uploadedItems={uploadedItems} 
+                        removeItem={removeItem}
                         selectItem={selectItem} 
                         selectedItem={selectedItem}
+                        addItem={addItem}
                     />
                 ) : ''}
             </div>

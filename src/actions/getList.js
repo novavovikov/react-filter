@@ -5,3 +5,9 @@ export const getLeftList = () => {
 		getList(dispatch, 'leftSide.json', 'LEFT');
 	}
 }
+
+export const getRightList = () => {
+	return dispatch => {
+		getList(dispatch, 'rightSide.json', 'RIGHT');
+	}
+}
